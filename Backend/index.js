@@ -8,7 +8,11 @@ const port = process.env.PORT || 5000;
 const server = express();
 const userRoute = require("./Routes/userroute");
 server.use(express.json());
-server.use(cors());
+server.use(
+  cors({
+    origin: ["http://localhost:5173", "https://your-frontend-url.vercel.app"],
+  }),
+);
 
 server.use("/user", userRoute);
 server.use("/event", eventRoute);
