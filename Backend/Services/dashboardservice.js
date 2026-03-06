@@ -1,27 +1,21 @@
-const mongoose = require("mongoose");
-const eventmodel = require("../Models/eventmodel");
-
 async function dashboardService({ userId }) {
   try {
     const now = new Date();
 
-    // convert to ObjectId to maintain consistency
-    const objectId = new mongoose.Types.ObjectId(userId);
-
     const registeredevents = await eventmodel
-      .find({ userId: objectId })
+      .find({ userId })
       .sort({ dateTime: 1 });
 
     const upcomingEvents = await eventmodel
       .find({
-        userId: objectId,
+        userId,
         dateTime: { $gte: now },
       })
       .sort({ dateTime: 1 });
 
     const pastEvents = await eventmodel
       .find({
-        userId: objectId,
+        userId,
         dateTime: { $lt: now },
       })
       .sort({ dateTime: -1 });
@@ -35,5 +29,3 @@ async function dashboardService({ userId }) {
     throw new Error(error.message);
   }
 }
-
-module.exports = { dashboardService };
