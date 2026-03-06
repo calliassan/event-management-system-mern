@@ -12,7 +12,7 @@ server.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://vercel.com/ashish-bhattarais-projects-48e87578/event-management-system-mern/8V8Gkdn1sLPfMetG6ZJzZckTJegU",
+      "https://event-management-system-mern-navy.vercel.app/",
     ],
   }),
 );
