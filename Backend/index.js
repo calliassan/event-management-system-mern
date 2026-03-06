@@ -13,6 +13,10 @@ server.use(
     origin: ["http://localhost:5173", "https://your-frontend-url.vercel.app"],
   }),
 );
+// Root route (important for deployment check)
+server.get("/", (req, res) => {
+  res.send("Event Management API running 🚀");
+});
 
 server.use("/user", userRoute);
 server.use("/event", eventRoute);
