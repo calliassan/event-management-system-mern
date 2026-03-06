@@ -1,3 +1,5 @@
+const eventmodel = require("../Models/eventmodel");
+
 async function dashboardService({ userId }) {
   try {
     const now = new Date();
