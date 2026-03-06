@@ -12,10 +12,13 @@ server.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://event-management-system-mern-navy.vercel.app",
+      "https://event-management-git-6147ec-ashish-bhattarais-projects-48e87578.vercel.app",
     ],
   }),
 );
+server.get("/health", (req, res) => {
+  res.status(200).send("Server running");
+});
 // Root route (important for deployment check)
 server.get("/", (req, res) => {
   res.send("Event Management API running 🚀");
