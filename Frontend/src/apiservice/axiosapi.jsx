@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create({
-  baseURL: `https://event-management-system-mern-l0fo.onrender.com/`,
+  baseURL: `https://event-management-system-mern-l0fo.onrender.com`,
 });
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");

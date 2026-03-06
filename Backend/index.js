@@ -12,7 +12,7 @@ server.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://event-management-system-mern-navy.vercel.app/",
+      "https://event-management-system-mern-navy.vercel.app",
     ],
   }),
 );
