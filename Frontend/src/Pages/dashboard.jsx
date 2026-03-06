@@ -29,7 +29,7 @@ export function Dashboard() {
 
   const fetchDashboard = async () => {
     const res = await api.get("/event/dashboard");
-    setData(res.data);
+    setData(res.data?.data);
   };
 
   const fetchTransactions = async () => {
