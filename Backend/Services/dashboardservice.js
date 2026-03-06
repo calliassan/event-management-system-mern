@@ -29,3 +29,4 @@ async function dashboardService({ userId }) {
     throw new Error(error.message);
   }
 }
+module.exports = { dashboardService };
